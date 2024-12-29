@@ -28,19 +28,7 @@ const Header = () =>{
   }, []);
 
 
-  const addToCart = (newItem:any) => {
-    const savedCartData = localStorage.getItem('cartData');
-    let cartItems = savedCartData ? JSON.parse(savedCartData) : [];
-
-    // Add the new item to the cart
-    cartItems.push(newItem);
-    
-    // Update local storage
-    localStorage.setItem('cartData', JSON.stringify(cartItems));
-
-    // Update the cart count
-    setCartCount(cartItems.length);
-  };
+  
 
   
     

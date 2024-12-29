@@ -36,7 +36,9 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
 
 
   const Productpage = ({ params }: param) => {
-    const [cartData, setCartData] = useState<any[]>(JSON.parse(localStorage.getItem("cartData") || "[]"));
+    const [cartData, setCartData] = useState<{ [key: string]: any }[]>(
+      JSON.parse(localStorage.getItem("cartData") || "[]")
+    );
     
     
   const convertnumber = Number(params.id)
@@ -53,7 +55,7 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
  
 
 
-  const addtoCart = (item: any) => {
+  const addtoCart = (item: { [key: string]: any }) => {
     
     setCartData((prev) => [...prev, item]); // Add item to the cart
     localStorage.setItem("cartData", JSON.stringify(cartData));
@@ -77,7 +79,7 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
 
   
 
-  const renderProduct = (product: any) => (
+  const renderProduct = (product: { [key: string]: any }) => {
     <div className="lg:flex lg:p-6 lg:mx-60">
       <Image
         src={product?.image || "/noting"}
@@ -101,7 +103,7 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
         <p className="text-green-700 mt-5">{product?.stock}</p>
       </div>
     </div>
-  );
+  }
 
 
 

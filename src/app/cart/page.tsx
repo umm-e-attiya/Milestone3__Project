@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 
 const Cart = () => {
-  const [cartData, setCartData] = useState<any[]>([]);
+  const [cartData, setCartData] = useState<{ [key: string]: any }[]>([]);
  
   
 
@@ -23,7 +23,7 @@ const Cart = () => {
   
 
   const removeFromCart = (id: string) => {
-    const updatedCart = cartData.filter((item: any) => item.id !== id);
+    const updatedCart = cartData.filter((item: { [key: string]: any }) => item.id !== id);
     setCartData(updatedCart);
     localStorage.setItem("cartData", JSON.stringify(updatedCart));
   };
@@ -37,7 +37,7 @@ const Cart = () => {
         <p className="text-center text-gray-500">Your cart is empty.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cartData.map((product: any) => (
+          {cartData.map((product) => (
             <div key={product.id} className="border rounded overflow-hidden shadow-lg">
               <Image
                 src={product.image || "/noting"}

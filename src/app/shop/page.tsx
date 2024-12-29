@@ -18,9 +18,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {Foundation.map((Foundation)=>{
                         return(
-                            <div>
+                            <div key={Foundation.id}>
                             
-                            <ul  key={Foundation.id} className="shadow-lg  hover:scale-110 transition duration-300 ease-in-out">
+                            <ul className="shadow-lg  hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${Foundation.id}`}>
                             <Image src={Foundation.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{Foundation.title}</li>
@@ -45,9 +45,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {Concealer.map((Concealer)=>{
                         return(
-                            <div>
+                            <div key={Concealer.id}>
                             
-                            <ul  key={Concealer.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${Concealer.id}`}>
                             <Image src={Concealer.image} alt="noting" width={300} height={300}  />
                             <li className="font-bold text-3xl ">{Concealer.title}</li>
@@ -71,9 +71,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {EyeShadow.map((EyeShadow)=>{
                         return(
-                            <div>
+                            <div  key={EyeShadow.id}>
                             
-                            <ul  key={EyeShadow.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul  className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${EyeShadow.id}`}>
                             <Image src={EyeShadow.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{EyeShadow.title}</li>
@@ -98,9 +98,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {EyeLiner.map((EyeLiner)=>{
                         return(
-                            <div>
+                            <div  key={EyeLiner.id}>
                             
-                            <ul  key={EyeLiner.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul  className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${EyeLiner.id}`}>
                             <Image src={EyeLiner.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl">{EyeLiner.title}</li>
@@ -124,9 +124,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {Blusher.map((Blusher)=>{
                         return(
-                            <div>
+                            <div key={Blusher.id}>
                             
-                            <ul  key={Blusher.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul   className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${Blusher.id}`}>
                             <Image src={Blusher.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{Blusher.title}</li>
@@ -151,9 +151,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {Highlighter.map((Highlighter)=>{
                         return(
-                            <div>
+                            <div  key={Highlighter.id} >
                             
-                            <ul  key={Highlighter.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${Highlighter.id}`}>
                             <Image src={Highlighter.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{Highlighter.title}</li>
@@ -178,9 +178,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {contour.map((contour)=>{
                         return(
-                            <div>
+                            <div key={contour.id}>
                             
-                            <ul  key={contour.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul   className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${contour.id}`}>
                             <Image src={contour.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{contour.title}</li>
@@ -204,9 +204,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {Lipstick.map((Lipstick)=>{
                         return(
-                            <div>
+                            <div key={Lipstick.id}>
                             
-                            <ul  key={Lipstick.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul   className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${Lipstick.id}`}>
                             <Image src={Lipstick.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{Lipstick.title}</li>
@@ -231,9 +231,9 @@ const Shop = () =>{
                 <ul className="flex flex-wrap  gap-8 px-24 p-8">
                     {LipGloss.map((LipGloss)=>{
                         return(
-                            <div>
+                            <div  key={LipGloss.id}>
                             
-                            <ul  key={LipGloss.id} className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
+                            <ul  className="shadow-lg hover:scale-110 transition duration-300 ease-in-out">
                             <Link href={`/shop/${LipGloss.id}`}>
                             <Image src={LipGloss.image} alt="noting" width={300} height={300} />
                             <li className="font-bold text-3xl ">{LipGloss.title}</li>
