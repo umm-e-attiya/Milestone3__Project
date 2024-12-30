@@ -37,7 +37,7 @@ const Cart = () => {
         <p className="text-center text-gray-500">Your cart is empty.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cartData.map((product) => (
+          {cartData.map((product: any) => (
             <div key={product.id} className="border rounded overflow-hidden shadow-lg">
               <Image
                 src={product.image || "/noting"}
