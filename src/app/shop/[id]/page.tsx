@@ -5,6 +5,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { useEffect } from "react" 
+import { useRouter } from "next/navigation";
 
 
 
@@ -36,9 +37,29 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
 
 
   const Productpage = ({ params }: param) => {
-    const [cartData, setCartData] = useState<{ [key: string]: any }[]>(
-      JSON.parse(localStorage.getItem("cartData") || "[]")
-    );
+
+    const router = useRouter(); // Initialize the router
+
+  const [cartData, setCartData] = useState<{ [key: string]: any }[]>([]);
+
+  useEffect(() => {
+    const savedCartData = localStorage.getItem("cartData");
+    if (savedCartData) {
+      setCartData(JSON.parse(savedCartData)); // Local storage ka data state mein daalna
+    }
+  }, []);
+
+  const addtoCart = (item: { [key: string]: any }) => {
+    const isAlreadyInCart = cartData.some((cartItem) => cartItem.id === item.id);
+    if (!isAlreadyInCart) {
+      const updatedCart = [...cartData, item];
+      setCartData(updatedCart); // State ko update karna
+      localStorage.setItem("cartData", JSON.stringify(updatedCart)); // LocalStorage update karna
+      console.log("Product added to cart:", item); // Debugging ke liye
+    } else {
+      console.log("Product is already in the cart!");
+    }
+  };
     
     
   const convertnumber = Number(params.id)
@@ -55,26 +76,7 @@ import { Blusher, Concealer, contour, EyeLiner, EyeShadow, Foundation, Highlight
  
 
 
-  const addtoCart = (item: { [key: string]: any }) => {
-    
-    setCartData((prev) => [...prev, item]); // Add item to the cart
-    localStorage.setItem("cartData", JSON.stringify(cartData));
-    console.log("Cart updated:", cartData); // Debugging purpose
-    
-
-    
-    
-    
   
-  };
-
-  useEffect(() => {
-    const savedCartData = localStorage.getItem("cartData");
-    if (savedCartData) {
-      setCartData(JSON.parse(savedCartData)); // Local storage ka data state mein daalna
-    }
-  }, []);
-
   
 
   
